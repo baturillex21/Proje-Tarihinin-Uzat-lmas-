@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="profil.css">
+
+<link rel="stylesheet" href="profil.js">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='style.css'> 
+ 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>profil</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        if(typeof(Storage) !== 'undefined'){
+         $(function(){
+            $('#test').on('keyup',function(){
+             localStorage.setItem("textarea_degeri",$(this).val());
+            }).val(localStorage.getItem("textarea_degeri"));
+         });
+      
+        }
+        if(typeof(Storage) !== 'undefined'){
+         $(function(){
+            $('#tes').on('keyup',function(){
+             localStorage.setItem("textarea_dege",$(this).val());
+            }).val(localStorage.getItem("textarea_dege"));
+         });
+      
+        }
+         </script>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav" id="menu">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="../Anasayfa.html">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../üyegirisi.html">Üye Girişi</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="hakkımızda.html" >Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../bizeulasın.html" >Bize Ulaşın</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../artvin/artvin.html" >Artvin  </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../Giresun1/Giresun.html" >Giresun      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../Giresun1/trabzon.html" >Trabzon     </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../rize/rize.html" >Rize     </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="profil.html" >Profilim     </a>
+                      </li>
+                  </ul>
+                  
+                </div>
+              </nav>
+              
+              <div class="sosyalmedya">
+              <img src="https://i.hizliresim.com/al0Rl2.png"id="sosyalmedya" class="img-fluid" alt="Responsive image">
+              </div>
+              
+              <aside class="profile-card">
+                <header>
+                  <!-- here’s the avatar -->
+                  <a target="_blank" href="#">
+                    <img src="http://lorempixel.com/150/150/people/" class="hoverZoomLink">
+                  </a>
+              
+                  <!-- the username -->
+                  <h1>
+                         Yasin21
+                        </h1>
+              
+                  <!-- and role or location -->
+                  <h2>
+                          Gezgin
+                        </h2>
+              
+                </header>
+              
+                <!-- bit of a bio; who are you? -->
+                <div class="profile-bio">
+              
+                  <p>
+                   Gezmeyi sever. Yeniliklerle dolu birisiyim ve bu sitede olmaktan gayet mutluyum.
+                  </p>
+              
+                </div>
+              
+                <!-- some social links to show off -->
+                <ul class="profile-social-links">
+                  <li>
+                    <a target="_blank" href="https://www.facebook.com/creativedonut">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://twitter.com/dropyourbass">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://github.com/vipulsaxena">
+                      <i class="fa fa-github"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://www.behance.net/vipulsaxena">
+                     
+                      <i class="fa fa-behance"></i>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+
+                <div class="kutu2">
+                  <p>Gezdiğim Sehirler</p>
+                </div>
+              <textarea name="test" id="test" rows="10" rows="30"></textarea>
+              <div class="kutu3">
+                 
+                  <textarea name="tes" id="tes" rows="10" rows="30"></textarea>
+                  <p class="baslikk">Site Hakkındaki Görüşleriniz</p>
+                </div>
+              
+
+              
+               
+                  
+              
+ 
+</body>
+</html>

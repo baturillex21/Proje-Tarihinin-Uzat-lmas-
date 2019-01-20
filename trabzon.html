@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trabzon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="trabzon.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="trabzon.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='jquery.min.js'></script>
+    <link rel='stylesheet prefetch' href='style.css'> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+  <div class="mobildegizle">
+    <script>
+      // YAZDIKLARIM
+  
+    function notlariListele(param) {
+        var httpistegi = new XMLHttpRequest();
+        var adres = "https://raw.githubusercontent.com/baturillex21/denemeJSON/master/trabzongezi.json";
+      
+      
+        httpistegi.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            var buraya_ekliyorum_1 = document.querySelector("#buraya_ekliyorum_1");
+            myArr.forEach(function(params) {
+              buraya_ekliyorum_1.innerHTML += '<h1 class="ilkmekan">' + params.gezilecekyerler + '</h1><p class="giresunAdasi">' + params.gezilecekyerbilgisi + ' </p> <img class="giresunkalesifoto" src="' + params.resim + '">' ; ;
+              
+            });
+          }
+        };
+        httpistegi.open("GET", adres, true);
+        httpistegi.send();
+       
+      } 
+      notlariListele();
+   
+     
+        function mutfak_listele(param) {
+      var httpistegi2 = new XMLHttpRequest();
+      var adres2 = "https://raw.githubusercontent.com/baturillex21/denemeJSON/master/trabzonmutfak.json";
+    
+    
+      httpistegi2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myArr2 = JSON.parse(this.responseText);
+          var mutfakbilgisii= document.querySelector("#mutfakbilgisii");
+          myArr2.forEach(function(params) {
+            mutfakbilgisii.innerHTML += '<h1 class="display-4">' + params.trabzonunmutafgı + '</h1><p class="giresunkalesi">' + params.mutfakbilgisi + ' </p> <img class="giresunkalesifoto" src="' + params.resim + '">' ; 
+            
+          });
+        }
+      };
+      httpistegi2.open("GET", adres2, true);
+      httpistegi2.send();
+     
+    } 
+    mutfak_listele();
+  
+  // OTELJSON
+    function otel_listele(param) {
+      var httpistegi3 = new XMLHttpRequest();
+      var adres3 = "https://raw.githubusercontent.com/baturillex21/denemeJSON/master/trabzonotel.json";
+    
+    
+      httpistegi3.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myArr3 = JSON.parse(this.responseText);
+          var otelbilgisi= document.querySelector("#otelbilgisi");
+          myArr3.forEach(function(params) {
+            otelbilgisi.innerHTML += '<h1 class="display-4">' + params.artvinotel + '</h1><p class="giresunkalesi">' +params.otelfiyat+'<p class="giresunkalesi">'+ params.otelbilgisi+ ' </p><p class="giresunkalesi"> <img class="giresunkalesifoto" src="' + params.resim +'">' ; 
+            
+          });
+        }
+      };
+      httpistegi3.open("GET", adres3, true);
+      httpistegi3.send();
+     
+    } 
+    otel_listele();
+      </script>
+      
+      <!--MUTFAK JSON-->
+  
+      
+  
+      
+  </head>
+  
+  <body >
+    <div class="mobildegizle">
+      <div class="icerik">
+        <section>
+  
+        </section>
+      </div>
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light " id="ustmenu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" id="menu">
+            <li class="nav-item ">
+              <a class="nav-link" href="../Anasayfa.html">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../üyegirisi.html">Üye Girişi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../hakkımızda ksımı/hakkımızda.html">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../bizeulasın.html">Bize Ulaşın</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="mainmenubtn"><a href="../artvin/artvin.html">Artvin</a></button>
+                <div class="dropdown-child">
+                  <a href="http://wwww.alanadiniz.com/sayfa1.html">GEZİLECEK YERLER</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa2.html">MUTFAK</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa3.html">KONAKLAMA</a>
+  
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="mainmenubtn"><a href="Giresun.html">Giresun</a></button>
+                <div class="dropdown-child">
+                  <a href="http://wwww.alanadiniz.com/sayfa1.html">GEZİLECEK YERLER</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa2.html">MUTFAK</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa3.html">KONAKLAMA</a>
+  
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="mainmenubtn"><a href="trabzon.html">Trabzon</a></button>
+                <div class="dropdown-child">
+                  <a href="http://wwww.alanadiniz.com/sayfa1.html">GEZİLECEK YERLER</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa2.html">MUTFAK</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa3.html">KONAKLAMA</a>
+  
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="mainmenubtn"><a href="../rize/rize.html">Rize</a></button>
+                <div class="dropdown-child">
+                  <a href="http://wwww.alanadiniz.com/sayfa1.html">GEZİLECEK YERLER</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa2.html">MUTFAK</a>
+                  <a href="http://wwww.alanadiniz.com/sayfa3.html">KONAKLAMA</a>
+  
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../hakkımızda ksımı/profil.html">profilim </a>
+            </li>
+          </ul>
+  
+        </div>
+      </nav>
+  
+      <div class="sosyalmedya">
+        <img src="https://i.hizliresim.com/al0Rl2.png" id="sosyalmedya" class="img-fluid" alt="Responsive image">
+      </div>
+  
+  
+  
+  
+  
+  
+      <div class="beyazalan">
+  
+        <div class="card-group kartlar">
+          <div class="card"><a href="#h5" class="scroll">
+              <img src="https://i.hizliresim.com/26jJ8q.jpg" class="card-img-top" alt="...">
+  
+              <div class="card-body">
+                <h5 class="card-title">Gezilecek Yerler</h5>
+                <p class="card-text">Trabzon'un eşsiz yaylarını ve görmeden gitmenizi istemediğimiz yerleri tanıtıyoruz.
+                </p>
+            </a>
+  
+          </div>
+        </div>
+        <div class="card"><a href="#u5" class="scroll">
+            <img src="https://i.hizliresim.com/nQR6lB.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Trabzon Mutfağı</h5>
+              <p class="card-text">Alışılmışın dışında ve tamamen sağlıklı ürünlerden ortaya çıkan lezzetleri tatmaya
+                hazır olun.</p>
+          </a>
+  
+        </div>
+      </div>
+      <div class="card">
+  
+        <div class="card-body"><a href="#y5" class="scroll">
+            <img src="https://i.hizliresim.com/oXEO3b.jpg" class="card-img-top konaklama" alt="..." style="">
+            <h5 class="card-title">Lüks Konaklama</h5>
+            <p class="card-text">Sahile sıfır oteller ve güler yüzlü personeller ile kendinizi hiç yabancı
+              hissetmeyeceksiniz.</p>
+          </a>
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+    <img src="http://www.mgm.gov.tr/sunum/sondurum-show-2.aspx?m=GIRESUN&rC=111&rZ=fff" style="width:140px; height:100px;" class="hava"alt="GİRESUN" />
+  
+    <div class="theTitle active">
+      <div class="left">
+        <h1>ASİ</h1>
+      </div>
+      
+      <span class="separator"></span>
+    
+      <div class="right">
+        <p>Trabzon'a<br>Hoşgeldiniz</p>
+  
+      </div>
+      
+  
+    </div>
+  
+  
+    <button class="toggleClass">Tıkla</button>
+    <div id="carouselExampleIndicators" class="carousel slide genelslayt" data-ride="carousel">
+      <ol class="carousel-indicators">
+  
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://i.hizliresim.com/QLQV8r.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://i.hizliresim.com/MVkd87.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://i.hizliresim.com/bVyBZn.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://i.hizliresim.com/grXOvQ.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://i.hizliresim.com/r5EO4M.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  
+    <script>
+      document.querySelector('.toggleClass').onclick = function () {
+        document.querySelector('.theTitle').classList.toggle('active');
+      };
+  
+    </script>
+    <a name="h5"></a>
+    <div class="jumbotron jumbotron-fluid" id="gezilecekyerler">
+      <div class="container ">
+  
+        <div class="baslik">
+          <h1 class="display-4 " id="ilkbaslik">Gezilecek Yerler ile Başlayalım</h1>
+  
+        </div>
+        
+        <!--GİRESUNDA GEZİLECEK YERLER-->
+        <div id="buraya_ekliyorum_1">
+  
+         
+        </div>
+  
+        <div id="carouselExampleControls" class="carousel slide yemekslider" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://i.hizliresim.com/Ba8zQD.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://i.hizliresim.com/26ja3N.jpg " class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://i.hizliresim.com/jgB6Oj.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+     
+        <div id="mutfakbilgisii">
+          
+        </div> <div id="otelbilgisi"></div>
+        <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&destination=place:Giresun&radius=50km&checkin=2019-01-11&checkout=2019-01-12&Rooms=1&adults_1=2&returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0"
+        target="_blank" class="btn btn-primary btn-lg active detaylıbilgi98" role="button" aria-pressed="true">Rezervasyon
+        İçin Tıklayınız</a>
+        <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&destination=place:Giresun&radius=50km&checkin=2019-01-11&checkout=2019-01-12&Rooms=1&adults_1=2&returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0"
+        target="_blank" class="btn btn-primary btn-lg active detaylıbilgi99" role="button" aria-pressed="true">Rezervasyon
+        İçin Tıklayınız</a>
+        <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&destination=place:Giresun&radius=50km&checkin=2019-01-11&checkout=2019-01-12&Rooms=1&adults_1=2&returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0"
+        target="_blank" class="btn btn-primary btn-lg active detaylıbilgi" role="button" aria-pressed="true">Rezervasyon
+        İçin Tıklayınız</a>
+        <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&destination=place:Giresun&radius=50km&checkin=2019-01-11&checkout=2019-01-12&Rooms=1&adults_1=2&returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0"
+        target="_blank" class="btn btn-primary btn-lg active detaylıbilgi444" role="button" aria-pressed="true">Rezervasyon
+        İçin Tıklayınız</a>
+        <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&destination=place:Giresun&radius=50km&checkin=2019-01-11&checkout=2019-01-12&Rooms=1&adults_1=2&returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0"
+        target="_blank" class="btn btn-primary btn-lg active detaylıbilgi333" role="button" aria-pressed="true">Rezervasyon
+        İçin Tıklayınız</a>
+      </div>
+      
+      
+        
+    <div class="card text-white bg-primary mb-3" id="bannerkart1" style="max-width: 55rem;left: 1px;top: 76px;">
+        <div class="card-header" id="bizi">Bizi takip ettiğiniz için teşekkür ederiz</div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text" id="bizi">Yakında yeni şehirler ile birlikte karşınızda olacağız takipte kalmanız dileğiyle.</p>
+        </div>
+      </div>
+      <div class="spinner-border" id="loading1" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      </div>
+      </div>
+      </div>
+      
+  
+  
+      <a name="u5"></a>
+   
+      
+     
+  
+  
+     
+  
+      </div>
+  
+  
+    <!-- 
+    
+    
+    
+    
+    --><h1 class="display-4 " style="margin-top: -3118px;
+    margin-left: 302px;
+    font-size: 27px;" id="ilkbaslik">Trabzon'u Gezdik
+      , Lezzetleri Tattık peki Nerde Konaklayacağız ?</h1>
+    
+    <!--OTEL KISIMI-->
+    <a name="y5"></a>
+    
+    </div>
+    </div>
+    </div>
+
+
+  </div>
+    
+<div class="mobilde-goster">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " id="ustmenu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" id="menu">
+            <li class="nav-item active">
+              <a class="nav-link" href="../Anasayfa.html">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../üyegirisi.html">Üye Girişi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../hakkımızda ksımı/hakkımızda.html" >Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../bizeulasın.html" >Bize Ulaşın</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../artvin/artvin.html" >Artvin  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="Giresun.html" >Giresun      </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../Giresun1/trabzon.html" >Trabzon     </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../rize/rize.html" >Rize     </a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+     
+    
+      <div class="card-group kartlar">
+          <div class="card">
+            <img src="https://i.hizliresim.com/26jJ8q.jpg" class="card-img-top" alt="...">
+            
+            <div class="card-body">
+              <h5 class="card-title">Gezilecek Yerler</h5>
+              <p class="card-text">Trabzon'un eşsiz yaylarını ve görmeden gitmenizi istemediğimiz yerleri tanıtıyoruz. </p>
+             
+            </div>
+          </div>
+          <div class="card">
+              <img src="indir.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Trabzon Mutfağı</h5>
+                <p class="card-text">Alışılmışın dışında ve tamamen sağlıklı ürünlerden ortaya çıkan lezzetleri tatmaya hazır olun.</p>
+             
+            </div>
+          </div>
+          <div class="card">
+              
+            <div class="card-body">
+                <img src="https://i.hizliresim.com/oXEO3b.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Lüks Konaklama</h5>
+              <p class="card-text">Sahile sıfır oteller ve güler yüzlü personeller ile kendinizi hiç yabancı hissetmeyeceksiniz.</p>
+            </div>
+          </div>
+          </div>
+        
+            
+          <div id="carouselExampleIndicators" class="carousel slide artvinmobilslider" data-ride="carousel">
+              <ol class="carousel-indicators">
+              
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src=",KwION_UTvU27qQsvM095AA_1000x575.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="NTA5NTE2Mz-trabzon-ataturk-koskunde-tadilat-sorusturmasi_1000x575.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="trabzon-kalesi-02_1000x575.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="trabzonhjk.jpg" alt="Third slide">
+                </div>
+              
+              </div>
+        
+    
+          <h1 class="display-4 " id="ilkbaslikmobil">Gezilecek Yerler ile Başlayalım</h1>
+    
+          <h1 class="ilkmekan">1-)Uzungöl</h1>
+          <p class="trabzonAdasi">
+              Trabzon’un önde gelen turistik mahallesi Uzungöl, göz alıcı doğal güzellikleri ile bir yayla köyüdür. Adını kıyısında kurulduğu gölden alan mahalle, Türkiye’nin yağmur ormanlarına ev sahipliği yapmaktadır. Köyde 1.500’den fazla kişi ikamet etmektedir. Bölgedeki göl, Haldizen Deresi’nin yolunu kapatan kayalar vesilesiyle meydana gelmiştir. Dünya üzerinde ılıman bölgede bulunan en eski ormanlık alanlardan biri Uzungöl’de yaşamaktadır. Yıl boyu yemyeşil olan bitki örtüsü, kışın kar yazın yağmur yağışıyla beslenmektedir. Uzungöl denizden 1.100 metre yükseklikte yer almaktadır. Yaban hayatının yaşamasına imkân sağlayan geniş ve zengin bitki örtüsü Tabiat Parkı statüsüne sahiptir. Tabiat Parkı, 1.625 hektarlık bir alanı kaplamaktadır. 2004 yılında Özel Çevre niteliği de kazanmış olan Uzungöl, yırtıcı kuşların göç yolu üzerindedir. Gündüz vakitleri yırtıcı kuşları gözlemleme imkânı bulunmaktadır. Yörenin dağlarında 60’tan fazla endemik bitki türü, 59 memeli ve 250 adet kuş türü olduğu yapılan araştırmalar ile belirlenmiştir.
+              
+                 </p>
+    
+                 <img class="giresunkalesifotomobil" src="https://static.wixstatic.com/media/9380ab_a77d95a4fbeb47e6b1163bd38190763c~mv2.jpg/v1/fill/w_468,h_313,al_c,q_80,usm_0.66_1.00_0.01/trabzon-1279747_960_720.jpg">
+    
+     <h1 class="ikincimekan">2-) Sümela Manastırı</h1>
+     <p class="sumelamanastır">Maçka’nın Altındere köyünde bulunan Sümela Manastırı, 1923 yılına kadar manastır olarak görevini sürdürmüştür. Ortodoks kilisesi olan manastıra aynı zamanda Meryem Ana da denmektedir. Nedeni ise; 2010 yılında Türkiye’den alınan izin sonrası, Meryem Ana’nın göğe yükseldiği kabul görülen günde burada ayin düzenlenmesidir. Dik bir dağın yamacına kurulan, heybetiyle gözlerini alamayacağınız Sümela Manastırı’nı Bizans İmparatorluğu döneminde Atina’dan gelen iki rahibin kurdurduğu söylenmektedir. Bu heybetli Manastır’ın dışı kadar içi de oldukça ilgi çekici. Kütüphanesi, öğrenci odaları, şapelleri, mutfağı, misafirhanesi ve kutsal bölümleri ile turizm açısından bölgenin en önemli noktasıdır. 6 katlı Sümela Manastırı’nın içerisinde apayrı bir dünyanın kapıları aralanıyor. İnce işçilikle yapılmış freskler, farklı detayları içinde barındıran resimler ve daha birçok ilgi çekici bölümleriyle her yıl binlerce turisti ağırlıyor. Trabzon gezinizde muhakkak uğramanız gereken bir rota olan Sümela Manastırı’na şehir içerisinde düzenlenen günübirlik turlarla katılım sağlayabilirsiniz.
+      </p>
+      </p>
+      <img class="giresunkalesifotomobil" src="https://static.wixstatic.com/media/9380ab_4c5cffbb1e1c4a14a0cfd0d040f63d52~mv2.jpg/v1/fill/w_476,h_308,al_c,q_80,usm_0.66_1.00_0.01/%2CKwION_UTvU27qQsvM095AA.jpg">
+      <h1 class="ucuncumekan">3-) Atatürk Köşkü</h1>
+      <p class="ataturkkosku">
+          Çamlar arasına kurulu olan Atatürk Köşkü, Soğuksu Mahallesi’nde yer alıyor. Atatürk Trabzon’a ilk geldiği yıllarda köşk, Trabzon Müzesi olarak kullanılmaktaydı, Atatürk de geldiğinde burada konaklamaktaydı. Köşke hayran olan ulu öndere Trabzon Özel İdaresince tapu ve anahtar teslim edilmiştir. Atatürk’ün ölümünden sonra köşk yeniden müzeye dönüştürülmüştür. Atatürk’e yaraşır bir güzelliğe sahip bu köşkte Avrupa ve Rönesans mimarisinin izlerini görebilirsiniz. Gösterişli Atatürk Köşkü’nü bu kadar harika kılan ise dış cephesinin taş işçiliği ile inşa edilmesidir. İç cephesi de Bağdadi tekniğine uygun olarak dizayn edilmiştir. Atatürk’e ait tablolar, mobilyalar, halılar, porselenler, kısacası Atatürk’ün yaşantısına dair ne varsa müzede sergilenmektedir. Haftanın her günü ziyarete açık olan Atatürk Köşkü’nü Atatürk alanından yarım saatte bir kalkan otobüslerle ziyaret edebilirsiniz.
+          </p>
+          <img class="giresunkalesifotomobil" src="https://emlakkulisi.com/resim/orjinal/NTA5NTE2Mz-trabzon-ataturk-koskunde-tadilat-sorusturmasi.jpg">
+          <h1 class="dorduncumekan">4-) Trabzon Ayasofya Müzesi</h1>
+          <p class="trabzonkalesi">
+              <p class="trabzonayasofya"> 
+                  Geç Bizans Kiliselerinin en güzel örneklerinden biri olan yapı, kare-haç planlı olup, yüksek bir kubbeye sahiptir. Kuzey, batı ve güneyinde revaklı üç kirişi bulunmaktadır. Yapı ana kubbenin üzerine değişik tonozlarla örtülmüş ve çatıya farklı yükseltiler verilerek kiremitle örtülmüştür.
+                  Bölgenin 1461 yılında Osmanlılar tarafından fethedilmesine kadar geçen dönemde önemli bir kilise olan Ayasofya, bu tarihten sonra da önemini koruyarak faaliyetlerine devam etmiştir. Ancak 1670 yılında görülen ihtiyaç üzerine camiye çevrilmiş ve 1864 yılında da restore edilmiştir.
+                  I. Dünya Savaşı yıllarında Ruslar tarafından işgal edilen Ayasofya, askeri karargah, hastane, depo ve savaştan sonra yine cami olarak kullanılmıştır. 1958-1962 yılları arasında Edinburgh Üniversitesi ve Vakıflar Genel Müdürlüğü işbirliği ile restore edilerek, 1964 yılında müzeye çevrilmiştir.
+              </p>
+          </p>
+              <img class="giresunkalesifotomobil" src="https://m.bianet.org/resim/olcekle/48563/490/254">
+      
+          </p>
+         
+          <h1 class="besincimekan">4-) Trabzon Kalesi</h1>
+          <p class="trabzonkalesi">
+              Tabakhane ve Zağnos Vadisi tepesine kurulu olan Trabzon Kalesi’nde surların Roma döneminde MÖ 4. yüzyıla dayandığı söyleniyor. Burada bulunan surlar Yukarı Hisar, İç Kale, Orta Hisar ve Aşağı Hisar’dır. Trabzon’daki en eski ve en iyi korunmuş yapılar arasında yer alan Trabzon Kalesi aynı zamanda turistik alanlar arasında da en popüler yerlerdendir. Yapıldığı dönemde Yukarı Hisar Kalesi’nin içerisinde imparator ve ailesi, soylular ve prensler ikamet edermiş. Kale’nin yapımına ait plan ve krokiden de anlaşılacağı gibi yine bu bölümün içerisinde hipodrom, hamam, tiyatro binası ve cephanelik de bulunuyormuş. Evliya Çelebi de Trabzon seyahati sonrasında Trabzon Kalesi’nden şu sözleriyle bahsediyor;
+              “Dağ tarafında cehennem kuyusuna benzer derin bir hendeği vardır ki 77 adam girer. Safi kesme kayadır. İçinde cami, muhafazacı evleri, mahzenleri, cebehaneleri vardır”.
+              Araklı ilçesinde bulunan Kale’yi ziyaret etmek için hafta içerisinde sabah veya öğleden sonra gitmenizi tavsiye ederiz, çünkü 17.00’den sonra Kale’ye ziyaretçi alınmamaktadır.
+          </p>
+          <img class="giresunkalesifotomobil2" src="https://gezilmesigerekenyerler.com/wp-content/uploads/2014/09/trabzon-kalesi-02.jpg">
+      
+          </p>
+      
+            
+      
+          </p>
+        
+        
+          <div id="carouselExampleControls" class="carousel slide trabzonmutfakkslayt" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="trabzons_cuisine_2_1000x575.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="imagesk_1000x575.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images_1000x575.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="narli_zeytinyagli_yaprak_sarma-e3a11bc7-b407-4fc5-beee-e1bff8dd3469_1000x575.jpg"alt="Thirdslide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="indir_1000x575.jpg" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <h1 class="display-4 " id="ikincibaslikmobil22">Trabzonun Lezzetlerine Yakından Bakalım</h1>
+            <p class="mutfak">Trabzon sırf doğasına değil, hayran olacağınız bir mutfağa da sahip. Hamur işlerinden et yemeklerine, tatlılardan sebze yemeklerine damak tadınıza uygun bir lezzeti mutlaka bulabilirsiniz.
+                Günün en güzel öğünü olan kahvaltıdan başlamak gerekirse, muhlamasız bir kahvaltı Trabzon’da düşünülemez. İster şehir merkezinde ister Uzungöl manzarası karşısında olsun, nerede yerseniz yiyin tadı damağınızda kalacak bir lezzet. Mısır unu, tereyağı ve Trabzon peyniriyle hazırlanan bu muhteşem lezzet kahvaltıların olmaksa olmazı.
+                Öğle yemeği dışında kahvaltılarda tüketilen kıymalı kapalı pide de sofraları şenlendiriyor. Şehrin birçok noktasında Trabzon’a özgü lezzetlerin yer aldığı serpme kahvaltılar sunuluyor. Geziniz esnasında kent meydanına yakın yerlerdeyseniz yemek molası vermek için Cemil Usta’yı tavsiye ederiz. Cemil Usta kentin favori köftecilerinden biridir. Buraya gelmişken Akçaabat köfte yemeden dönmemenizi öneririz. Et sevmeyenler içinse yine burada mezgit de alternatif olabilir. Balık sevenler için hamsi ve hamsiden yapılan birçok yemeklerin yer aldığı gibi diğer balık türlerinin de özenle servis edildiği Bayramoğlu Alabalık Restoranı’nı tavsiye edebiliriz. Sahil şeridi boyunca yine pek çok balık ve et restoranlarına girerek farklı tatları deneyimleyebilirsiniz.
+                Eğer şehir merkezinden farklı bir yerde yemek yemeye karar verdiyseniz Uzungöl’de bulunan restoran ve kafelerde de manzara karşısında keyifli bir yemek yiyebilirsiniz. Şehirde vejetaryenler için de harika bir lezzet bulunuyor. Pırasa, pazı, mısır yarması, pirinç ve isteğe göre de hamsi ile yapılan sarambula, Trabzon’un lezzetli yemeklerinden biri. Pazı çorbası ve karalahana çorbası da kış aylarında içinizi ısıtacak bir tat.
+                Tatlı olarak da Trabzon’a gelmişken öncelikle Trabzon hurması yemenizi tavsiye ederiz. Daha sonra fındık, siyah üzüm, Antep fıstığı ya da Hindistan cevizi, isteğe göre de vanilya ve mısır unuyla yapılan pepeçurayı tadabilirsiniz. Hamsiköy sütlacı ve Laz böreğini de tatmanızı önerdiğimiz diğer lezzetler arasında yer alıyor.
+                </p>
+                  
+              
+              
+             
+    
+
+          
+                    <h1 class="kuymak">1-) Kuymak</h1>
+                    <p class="kuymakkahvaltı"> 
+                        Karadeniz yöresine ait bir yemektir. Mısır unu, tereyağı ve çökelekten yapılır. Bazı bölgelerde örgü peyniri de kullanılır. Yapılışı bölgelere göre farklılık gösterir. En bilinenleri Artvin usulü, Trabzon usulü ve Samsun usulüdür. Kelime kökeni olarak bakıldığında “kuymak” öz Türkçe bir kelimedir ve Anadolu’nun başka yörelerinde peynir kullanılmadan hazırlanan arpa ve buğday lapalarını tanımlamak için kullanılmaktadır.
+                        Trabzon, Erzurum, Gümüşhane, Bayburt, Ardahan-Posof’ta ve Artvin’in iç kesimlerinde “kuymak”, Ordu, Sivas, Giresun ve Trabzon Şalpazarı’nda yağlaş “yağlı aş”, Rize ve Artvin sahilinde “muhlama”, Trabzon’un Rumca konuşulan köylerinde ve Çamlıhemşin’de “havits” adlarıyla da bilinmektedir.
+                        Kuymak ayrıca Dağıstan, Gürcistan, Azerbaycan ve Kafkasya bölgelerinde de popülerdir.
+                        Yapılışı: Genel bir tarif vermek gerekirse; tereyağı tavada eritilir ve mısır unuyla yağ kavrulur. Un kavrulduktan sonra ılık su ilave edilir ve içine peynirler bırakılır. Sıcak servis edilir.
+                    </p>
+  
+        </p>
+        <img class="giresunkalesifotomobil" src="https://cdn.yemek.com/mnresize/940/940/uploads/2017/12/kuymak-tarifi-y.jpg">
+        <h1 class="kofte">2-)Akçaabat Köfte</h1>
+        <p class="Akcaabatkofte"> 
+            Akçaabat Köftesi 1930 yıllarında Akçaabat’lı lokantacıların ortaklaşa yaptıkları etlerinden bir araya getirilerek belirli ölçüde ekmek, sarımsak, iç yağı ve tuzun katılımıyla ortaya çıkardıkları bir lezzettir. Kendilerinin yemeleri için yaptığı bu köfte daha sonra lokantalarda kömürlü ızgaralı ocaklarda pişirilmek kaydıyla önce bu bölgeye tanıtılmış daha sonrada ününü tüm Türkiye’ye duyurmuştur.
+            Türkiye’ye adını duyuran Akçaabat Köftesi ülkemizde yapılan diğer köftelerden farklı ve ayrıcalıklıdır. Maharetli ustalar tarafından yörenin otuyla beslenmiş ineklerin özenle seçilen etlerinin döş, kol ve gerdanıyla bunların karışımından oluşan, sinir ve ekstra yağ bulunmayan etlerinden kıyılarak yoğrulan ve bir gün dolapta bekletildikten sonra köfte ocağında pişirilen ve servis yapılan meşhur Akçaabat köftesinin tadı bir başkadır.
+            Akçaabat Köftesi; Trabzon ekmeği, piyaz, kızarmış biber, domates ve ayranla servis edilmektedir.
+        </p>
+            <img class="giresunkalesifotomobil" src="https://cdn.yemek.com/mncrop/940/625/uploads/2016/12/akcaabat-koftesi.jpg">
+      
+        
+            <h1 class="guliya">3-)Guliya</h1>
+            <p class="guliyayemek"> 
+                Biz yukarıya guliya yazdık ama aslında "ğ" ile başladığını düşünün; yani "ğuliya". İşte aynen böyle! Barbunya, patates, iç yağı ve karalahananın muhteşem buluşması ile yapılan bu yemek, pul biberle taçlandırılıyor.
+        </p>
+              </p>
+                <img class="giresunkalesifotomobil" src="https://cdn.yemek.com/uploads/2014/12/guliya-yemegi-trabzon.jpg">
+        
+        
+                <h1 class="guliya">4-)Hamsi buğulama</h1>
+                <p class="guliyayemek">Karadeniz'de hamsi pilav kadar ünlü bir yemek varsa; o da hamsi buğulamadır. Hamsiler ayıklanır, kuru soğanlar ince ince doğranır. Salça eritilir ve doğranan soğan üzerine eklenir. Limonlar ince ince kesilir ve hamsilerin üzerine yerleştirilir. Tuz, karabiber ve maydanozun da eklenmesiyle tencerenin kapağı kapatılarak pişmeye bırakılır. Sonra da afiyetle yenir! Hamsinin tadını tam anlamıyla almak istiyorsanız kesinlikle buğulama yemelisiniz. 
+                  </p>
+                  <img class="giresunkalesifotomobil" src="http://i.hurimg.com/i/hurriyet/75/1500x844/5ab4e27867b0a92ef0e46ac4.jpg">
+        
+                  <h1 class="guliya">5-)Trabzon pidesi</h1>
+                  <p class="guliyayemek"> Türkiye'nin birçok yerinde pide, ustalıkla yapılır. Fakat pide deyince akla ilk gelen şehir Trabzon'dur. Köy peynirinin o güzel tadı, isteğe göre eklenen yumurta ve tereyağı ile şenlenir. Trabzon pidesi, Karadeniz lezzetleri arasında mutlaka denenmesi gerekenlerdendir.
+                    </p>
+                  <img class="giresunkalesifotomobil" src="data:image/jpeg;base64,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">
+        
+          <h1 class="display-4 " style="margin-top: 22px;margin-left: 32px;font-size: 27px;" id="ilkbaslik">Trabzon'u Gezdik , Lezzetleri Tattık peki Nerde Konaklayacağız ?</h1>
+          <p class="guliyayemek"> Trabzon'da günü geçirdikten sonra güzel bir uykuya ihtiyacınız olacaktır. Merak etmeyin bu konudada biz yardımı olacağız . İster şehir içi ister şehir dışı her türlü konaklama yerlerini tanıtmaktayız.
+            </p>
+          <p class="otel1mobil">Ramada Plaza Hotel & Spa</p>
+          
+          <img src="https://edge.media.datahc.com/HI501784987.jpg" class="otelfoto2mobil">
+          <p class="otelaciklama2mobil">Şehir Merkezine 34.7 km uzaklıkta,Trabzon </p>
+          <p class="otelaciklamamobil">Kahvaltı Dahil! </p>
+          <div class="yildizmobil1">
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              
+            </div>
+            <p class="jasminotelfiyatimobil">1 Gecelik Konaklama 519 TL</p>
+            <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&amp;destination=place:Giresun&amp;radius=50km&amp;checkin=2019-01-11&amp;checkout=2019-01-12&amp;Rooms=1&amp;adults_1=2&amp;returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0" target="_blank" class="btn btn-primary btn-lg active artvinotelmobil" role="button" aria-pressed="true">Rezervasyon İçin Tıklayınız</a>
+    
+            <p class="otel1mobil">Sezginler Otel</p>
+          
+          <img src="https://edge.media.datahc.com/HI346677054.jpg" class="otelfoto2mobil">
+          <p class="otelaciklama2mobil">Şehir merkezine 121,8 km uzaklıkta, Uzungöl</p>
+          <p class="otelaciklamamobil">Kahvaltı Dahil Değil ! Son 1 Oda</p>
+          <div class="yildizmobil1">
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              <div class="fa fa-star checked"></div>
+              
+              <div class="fa fa-star"></div>
+            </div>
+            <p class="jasminotelfiyatimobil">1 Gecelik Konaklama 261 TL</p>
+            <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&amp;destination=place:Giresun&amp;radius=50km&amp;checkin=2019-01-11&amp;checkout=2019-01-12&amp;Rooms=1&amp;adults_1=2&amp;returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0" target="_blank" class="btn btn-primary btn-lg active artvinotelmobil" role="button" aria-pressed="true">Rezervasyon İçin Tıklayınız</a>
+    
+            <p class="otel1mobil">Hotel Horon Trabzon</p>
+          
+            <img src="https://edge.media.datahc.com/HI292286390.jpg" class="otelfoto2mobil">
+            <p class="otelaciklama2mobil">Şehir merkezine 30,7 km  </p>
+            <p class="otelaciklamamobil">Kahvaltı dahil ! Son 5 Oda</p>
+            
+            <div class="yildizmobil1">
+                <div class="fa fa-star checked"></div>
+                <div class="fa fa-star checked"></div>
+                <div class="fa fa-star checked"></div>
+                
+                <div class="fa fa-star"></div>
+                <div class="fa fa-star"></div>
+               
+              </div>
+              <p class="jasminotelfiyatimobil">1 Gecelik Konaklama 194 TL</p>
+              <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&amp;destination=place:Giresun&amp;radius=50km&amp;checkin=2019-01-11&amp;checkout=2019-01-12&amp;Rooms=1&amp;adults_1=2&amp;returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0" target="_blank" class="btn btn-primary btn-lg active detaylıbilgimobil" role="button" aria-pressed="true">Rezervasyon İçin Tıklayınız</a>
+    
+    
+              <p class="otel1mobil">Hotel Feza Trabzon
+
+                </p>
+          
+                <img src="https://edge.media.datahc.com/HI520512696.jpg" class="otelfoto2mobil">
+              <p class="otelaciklama2mobil">Şehir merkezine 26,3 km uzaklıkta  </p>
+              <p class="otelaciklamamobil">Kahvaltı Dahil ! Son 1 Oda</p>
+              <div class="yildizmobil1">
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  
+                </div>
+                <p class="jasminotelfiyatimobil">1 Gecelik Konaklama 26 TL</p>
+                <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&amp;destination=place:Giresun&amp;radius=50km&amp;checkin=2019-01-11&amp;checkout=2019-01-12&amp;Rooms=1&amp;adults_1=2&amp;returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0" target="_blank" class="btn btn-primary btn-lg active detaylıbilgimobil" role="button"style="margin-top: -21px;" aria-pressed="true">Rezervasyon İçin Tıklayınız</a>
+    
+    
+                
+              <p class="otel1mobil">Sanli Hotel Hammam & SPA</p>
+          
+              <img src="https://edge.media.datahc.com/HI533415584.jpg" class="otelfoto22mobil">
+              <p class="otelaciklama2mobil">Şehir merkezine 28,8 km uzaklıkta,Trabzon</p>
+              <p class="otelaciklamamobil">Kahvaltı Dahil ! Son 1 oda</p>
+              <div class="yildizmobil1">
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star checked"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  
+                </div>
+                <p class="jasminotelfiyatimobil">1 Gecelik Konaklama 84 TL</p>
+                <a href="https://www.hotelscombined.com.tr/Hotel/Search?fileName=Hotel_New_Jasmin&amp;destination=place:Giresun&amp;radius=50km&amp;checkin=2019-01-11&amp;checkout=2019-01-12&amp;Rooms=1&amp;adults_1=2&amp;returnPath=%2FHotels%2FSearch%3Fdestination%3Dplace%3AGiresun%26radius%3D50km%26checkin%3D2019-01-11%26checkout%3D2019-01-12%26Rooms%3D1%26adults_1%3D2%26pageSize%3D15%26pageIndex%3D0%26sort%3DPopularity-desc%26showSoldOut%3Dfalse%26scroll%3D200%26HotelID%3D%26mapState%3Dexpanded%253D0" target="_blank" class="btn btn-primary btn-lg active detaylıbilgimobilson" role="button" aria-pressed="true">Rezervasyon İçin Tıklayınız</a>
+    
+                <div class="card text-white bg-primary mb-3" id="bannerkart1" style="left: 10px;top: 5px; width: 341px;height: 251px;">
+                    <div class="card-header" id="bizi">Bizi takip ettiğiniz için teşekkür ederiz</div>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text" id="bizi">Yakında yeni şehirler ile birlikte karşınızda olacağız takipte kalmanız dileğiyle.</p>
+                    </div>
+                  </div>
+</div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+</body>
+
+</html>
